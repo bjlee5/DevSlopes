@@ -7,19 +7,43 @@
 //
 
 import UIKit
+import GameKit
 
 class ViewController: UIViewController {
 
+    var questionsArray: [String : String] = ["Brett Favre played for the Falcons, Packers, & Rams" : "False",
+                                             "John Glenn went to the moon a while ago" : "True",
+                                             "Golden Retreivers are absolutely vicious animals" : "False",
+                                             "Jay-Z and Beyonce are married" : "True",
+                                             "Kanye West recorded the albums 'Niggaz With Attitude', 'The Chronic', & 'Graduation'" : "False"]
+    
+    var animalsArray: [String] = ["Dog", "Cat", "Panda", "Weasel", "Monkey"]
+    
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var nextLabel: UIButton!
+    @IBOutlet weak var trueLabel: UIButton!
+    @IBOutlet weak var falseLabel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        nextLabel.isHidden = true
+        answerLabel.isHidden = true
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func nextBtn(_ sender: Any) {
     }
-
-
+    
+    @IBAction func trueBtn(_ sender: Any) {
+        questionLabel.text = animalsArray[1]
+        falseLabel.isHidden = true
+    }
+    
+    @IBAction func falseBtn(_ sender: Any) {
+    }
+    
 }
+
 
